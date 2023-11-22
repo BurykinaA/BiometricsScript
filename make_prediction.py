@@ -25,7 +25,7 @@ transform = transforms.Compose(
 
 def get_predict():
 
-    directory = "ImagestForTest"
+    directory = "ImagesForTest"
 
     # Инициализация словаря для результатов
     results = {}
@@ -38,7 +38,7 @@ def get_predict():
             minifasnet = "real" if get_sreenshot(img) == 1 else "fake"
             results[filename] = minifasnet
             """
-            еще есть такое опции
+            Получение результата всех трех сетей 
                 numpy_array = read_image(path)
                 # print(numpy_array)
                 X = transform(numpy_array)
@@ -47,6 +47,7 @@ def get_predict():
                 # print(X)
                 img = np.array(Image.open(path))
 
+                print(filename)
                 mcnn = "real" if get_score(X) == 1 else "fake"
                 print(mcnn)
                 mobilenet = "real" if get_score_mobil(X) == 1 else "fake"
